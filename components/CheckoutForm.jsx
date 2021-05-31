@@ -2,7 +2,7 @@ import { useState } from "react"
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
 import styled from "@emotion/styled"
 import axios from "axios"
-
+import useCart from "../hooks/use-cart.js"
 import Row from "./prebuilt/Row"
 import BillingDetailsFields from "./prebuilt/BillingDetailsFields"
 import SubmitButton from "./prebuilt/SubmitButton"
@@ -25,6 +25,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
 
   const stripe = useStripe()
   const elements = useElements()
+  const cartItems = useCart()
 
   // TIP
   // use the cardElements onChange prop to add a handler
@@ -54,11 +55,13 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
 
     try {
       const { data: clientSecret } = await axios.post(
-        "https://dyh4j4u2r5.execute-api.us-east-1.amazonaws.com/latest",
+        "https://dyh4j4u2r5.execute-api.us-east-1.amazonaws.com/latest/create-charge",
         {
           amount: price * 100,
+          currency: "usd",
         }
       )
+      console.log(clientSecret)
 
       const paymentMethodReq = await stripe.createPaymentMethod({
         type: "card",
@@ -66,6 +69,18 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
         billing_details: billingDetails,
       })
 
+      const stuff = { ...cartItems, ...billingDetails }
+      const sendPostRequest = async () => {
+        try {
+          const resp = axios.post(
+            "https://dyh4j4u2r5.execute-api.us-east-1.amazonaws.com/latest/session-completed",
+            stuff
+          )
+        } catch (err) {
+          // Handle Error Here
+          console.error(err)
+        }
+      }
       if (paymentMethodReq.error) {
         setCheckoutError(paymentMethodReq.error.message)
         setProcessingTo(false)
@@ -82,31 +97,19 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
         return
       }
 
-      onSuccessfulCheckout()
+      onSuccessfulCheckout().then(sendPostRequest)
     } catch (err) {
       setCheckoutError(err.message)
     }
   }
 
-  // Learning
-  // A common ask/bug that users run into is:
-  // How do you change the color of the card element input text?
-  // How do you change the font-size of the card element input text?
-  // How do you change the placeholder color?
-  // The answer to all of the above is to use the `style` option.
-  // It's common to hear users confused why the card element appears impervious
-  // to all their styles. No matter what classes they add to the parent element
-  // nothing within the card element seems to change. The reason for this is that
-  // the card element is housed within an iframe and:
-  // > styles do not cascade from a parent window down into its iframes
-
   const iframeStyles = {
     base: {
-      color: "#fff",
+      color: "black",
       fontSize: "16px",
       iconColor: "#fff",
       "::placeholder": {
-        color: "#87bbfd",
+        color: "silver",
       },
     },
     invalid: {

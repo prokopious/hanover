@@ -1,33 +1,41 @@
-import { useState } from "react";
-import Router from "next/router";
+import Head from "next/head"
+import Layout from "../components/Layout"
+import LazyHero from "react-lazy-hero"
+import App from "../App"
+import Grid from "../components/Grid"
+import Order from '../components/Order'
 
-import Layout from "../components/Layout";
-import Row from "../components/prebuilt/Row";
-import DonutShop from "../components/prebuilt/DonutShop";
-import CheckoutForm from "../components/CheckoutForm";
-import getDonutPrice from "../utils/get-donut-price";
 
-const MainPage = props => {
-  const [numDonuts, setNumDonuts] = useState(1);
 
-  const addDonut = () => setNumDonuts(num => Math.min(12, num + 1));
-  const remDonut = () => setNumDonuts(num => Math.max(1, num - 1));
-
+export default function Home() {
   return (
-    <Layout title="Donut Shop">
-      <Row>
-        <DonutShop
-          onAddDonut={addDonut}
-          onRemoveDonut={remDonut}
-          numDonuts={numDonuts}
-        />
-      </Row>
-      <CheckoutForm
-        price={getDonutPrice(numDonuts)}
-        onSuccessfulCheckout={() => Router.push("/success")}
-      />
-    </Layout>
-  );
-};
+    <Layout>
+      <div>
+        <Head>
+          <title>Create Next App</title>
+          <link rel="icon" href="/favicon.ico" />
+          <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        </Head>
 
-export default MainPage;
+        <main>
+       <LazyHero
+            opacity={0.1}
+            minHeight="75vh"
+            imageSrc="https://images.pexels.com/photos/3756050/pexels-photo-3756050.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+          >
+            <h1 className="her">
+              Bread Delivered Fresh
+            </h1>
+            <h4 className="text white 2xl">right to your door</h4>
+            <h2 id="order">ORDER BELOW</h2>
+         
+            </LazyHero>
+          
+     <Order />
+      
+         <div> <Grid /></div>
+        </main>
+      </div>
+    </Layout>
+  )
+}

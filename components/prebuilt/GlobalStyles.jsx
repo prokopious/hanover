@@ -27,11 +27,16 @@ const GlobalStyles = () => (
       styles={css`
         body,
         html {
-          background-color: #6772e5;
+
           font-size: 18px;
-          font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-          padding-top: 40px;
+          font-family: Baskerville Old Face;
+         
         }
+        body {
+          background: url('https://images.pexels.com/photos/5908191/pexels-photo-5908191.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+
+        }
+  
       `}
     />
   </>

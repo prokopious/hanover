@@ -1,0 +1,61 @@
+.table {
+  width: 100%;
+  border-spacing: 0;
+
+  border-radius: 5px;
+}
+
+.table thead td {
+  color: rgb(0, 0, 0);
+  background-color: #bb090900;
+  border-top: transparent;
+}
+
+.table thead tr {
+
+  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) , rgba(0, 0, 0, 0.199));
+}
+
+.table tr:first-child td:last-child {
+border-radius: 0px;
+  border-top-right-radius: 5px;
+
+}
+.table tfoot tr:last-child td:last-child {
+  border-radius: 0px;
+    border-bottom-right-radius: 5px;
+  
+  }
+
+
+.table tr:last-child td {
+  border-bottom: 0;
+  
+}
+
+
+.table td {
+  padding: .7em;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  border-top: 1px solid rgb(0, 0, 0);
+}
+
+.table td:not(:first-child) {
+  text-align: center;
+}
+.table tfoot td {
+  color: rgb(0, 0, 0);
+
+  
+}
+.table tfoot tr {
+  border-top: 1px solid rgb(0, 0, 0);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) , rgba(255, 255, 0, 0.418));
+}
+
+.row {
+  border-left: 1px solid rgb(0, 0, 0);
+}

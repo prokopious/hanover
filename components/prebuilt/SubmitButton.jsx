@@ -1,11 +1,11 @@
-import styled from "@emotion/styled";
+import styled from "@emotion/styled"
 
 const SubmitButton = styled.button`
   display: block;
   height: 40px;
   width: 100%;
   font-size: inherit;
-  background-color: ${props => (props.disabled ? "#7795f8" : "#f6a4eb")};
+  background-color: ${props => (props.disabled ? "silver" : "rgb(233, 85, 0)")};
   box-shadow: ${props =>
     props.disabled
       ? "none"
@@ -15,6 +15,6 @@ const SubmitButton = styled.button`
   color: #fff;
   font-weight: 600;
   cursor: pointer;
-`;
+`
 
-export default SubmitButton;
+export default SubmitButton
