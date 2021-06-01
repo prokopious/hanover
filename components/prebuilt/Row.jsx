@@ -8,6 +8,9 @@ const Row = styled.div`
   border-radius: 4px;
   background-color: transparent;
   position: relative;
+  @media (max-width: 768px) {
+    width: 350px;
+  }
 `;
 
 export default Row;

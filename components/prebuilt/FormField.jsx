@@ -23,10 +23,13 @@ const Label = styled.label`
   text-overflow: ellipsis;
   white-space: nowrap;
   border-right: 1px solid silver;
+  @media (max-width: 768px) {
+   font-size: 14px;
+  }
 `;
 
 const Input = styled.input`
-  font-size: 16px;
+  font-size: 14px;
   width: 100%;
   padding: 11px 15px 11px 8px;
   color: black;
