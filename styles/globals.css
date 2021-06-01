@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap');
 .box{
 	padding: 30px;
 }
@@ -49,7 +50,7 @@
 	color: rgb(190, 190, 190);
 	padding: 5px;
 	min-width: 50px;
-	font-family: Baskerville;
+
   }
   
   .sticky-wrapper {
@@ -69,13 +70,20 @@
   
  #order {
 	 font-size: 30px;
+	 font-family: 'IM Fell English', serif;
  }
   
  #navbar {
-	 font-size: 18px;
-	 text-transform: uppercase;
+	 font-size: 16px;
+
+	 font-family: 'IM Fell English', serif;
  }
 
 .her {
 	font-size: 30px;
+	font-family: 'IM Fell English', serif;
+}
+
+body {
+	font-family: 'IM Fell English', serif;
 }
