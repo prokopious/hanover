@@ -1,21 +1,24 @@
 import Head from "next/head"
 
 import styles from "../styles/Cart.module.css"
-import CheckoutForm from '../components/CheckoutForm'
+import CheckoutForm from "../components/CheckoutForm"
 import Router from "next/router"
 import useCart from "../hooks/use-cart.js"
 import Layout from "../components/Layout"
 
 import axios from "axios"
 export default function Home() {
-  const { cartItems, clearCart, updateItem } = useCart()
+  const { cartItems, cart, clearCart, updateItem } = useCart()
   const { subtotal, quantity, addToCart } = useCart()
   const stuff = JSON.stringify(cartItems)
+
+  const kart = cart
   const sendPostRequest = async () => {
     try {
       const resp = await axios.post(
         "https://dyh4j4u2r5.execute-api.us-east-1.amazonaws.com/latest/delivery",
-        cartItems
+        cartItems,
+        cart
       )
     } catch (err) {
       // Handle Error Here

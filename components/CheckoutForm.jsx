@@ -12,7 +12,6 @@ const CardElementContainer = styled.div`
   height: 40px;
   display: flex;
   align-items: center;
-
   & .StripeElement {
     width: 100%;
     padding: 15px;
@@ -26,6 +25,8 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   const stripe = useStripe()
   const elements = useElements()
   const cartItems = useCart()
+  const cart = useCart()
+  let carty = JSON.stringify(cart)
 
   // TIP
   // use the cardElements onChange prop to add a handler
@@ -38,6 +39,9 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   const handleFormSubmit = async ev => {
     ev.preventDefault()
 
+    const theCart = {
+      info: carty,
+    }
     const billingDetails = {
       name: ev.target.name.value,
       email: ev.target.email.value,
@@ -69,7 +73,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
         billing_details: billingDetails,
       })
 
-      const stuff = { ...cartItems, ...billingDetails }
+      const stuff = { ...cartItems, ...billingDetails, ...theCart }
       const sendPostRequest = async () => {
         try {
           const resp = axios.post(

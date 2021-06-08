@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
 .box{
 	padding: 30px;
 }
@@ -76,14 +76,14 @@
  #navbar {
 	 font-size: 16px;
 
-	 font-family: 'IM Fell English', serif;
+	 font-family: 'Old Standard TT';
  }
 
 .her {
 	font-size: 30px;
-	font-family: 'IM Fell English', serif;
+	font-family: 'Old Standard TT';
 }
 
 body {
-	font-family: 'IM Fell English', serif;
+	font-family: 'Old Standard TT';
 }
