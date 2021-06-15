@@ -3,42 +3,14 @@ import products from "../products.json"
 import useCart from "../hooks/use-cart"
 import { FiPlusSquare } from "react-icons/fi"
 import { FiMinusSquare } from "react-icons/fi"
-import { useQuery, gql } from "@apollo/client"
+import { gql } from "@apollo/client"
+import client from "../apollo-client"
 
-const QUERY = gql`
-query MyQuery {
-  listProducts {
-    items {
-      description
-      id
-      image
-      price
-      title
-    }
-  }
-}
-`
-
-export default function Grid() {
+export default function Grid({ countries }) {
   const { addToCart, removeFromCart } = useCart()
-  const { data, loading, error } = useQuery(QUERY, {
-    pollInterval: 500,
-  })
 
-  if (loading) {
-    return <h2>Loading...</h2>
-  }
-
-  if (error) {
-    console.error(error)
-    return null
-  }
-
-  const stuff = data.listProducts.items
- const products = stuff
-  console.log(stuff)
-
- 
+const z = countries
+console.log(z)
 
   return (
     <>
@@ -74,4 +46,28 @@ export default function Grid() {
       </div>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const { data } = await client.query({
+    query: gql`
+      query MyQuery {
+        listProducts {
+          items {
+            description
+            id
+            image
+            price
+            title
+          }
+        }
+      }
+    `,
+  })
+
+  return {
+    props: {
+      countries: data,
+    },
+  }
 }

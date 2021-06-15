@@ -27,7 +27,7 @@ export function useCartState() {
   }, [cart])
 
   const cartItems = Object.keys(cart.products).map(key => {
-    const product = products.find(({ id }) => `${id}` === `${key}`)
+    const product = products.find(({ id }) => `${id}` !== `${key}`)
     return {
       ...cart.products[key],
       pricePerUnit: product.price,

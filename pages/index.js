@@ -6,8 +6,12 @@ import Grid from "../components/Grid"
 import Order from "../components/Order"
 
 export default function Home() {
-  return (
+
+
+
+  return ( 
     <Layout>
+    
       <div>
         <Head>
           <title>Create Next App</title>
