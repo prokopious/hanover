@@ -1,7 +1,6 @@
 import Head from "next/head"
 import SubmitButton from "../components/prebuilt/SubmitButton"
 import styles from "../styles/Cart.module.css"
-import CheckoutForm from "../components/CheckoutForm"
 import { GrUpdate } from 'react-icons/gr'
 import { gql } from "@apollo/client"
 import client from "../apollo-client"
@@ -9,9 +8,6 @@ import Router from "next/router"
 import useCart from "../hooks/use-cart.js"
 import Layout from "../components/Layout"
 import Link from 'next/link'
-
-import products from "../products.json"
-
 import Table from "../components/Table"
 
 
