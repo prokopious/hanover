@@ -4,8 +4,12 @@ import LazyHero from "react-lazy-hero"
 import App from "../App"
 import Grid from "../components/Grid"
 import Order from "../components/Order"
+import { loadProducts } from "../public/js/load"
 
 export default function Home() {
+
+console.log(loadProducts)
+
 
 
 

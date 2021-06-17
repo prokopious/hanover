@@ -67,12 +67,7 @@ export default function Navbar() {
                 About
               </a>
             </Link>
-            <Link href="/">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 text-white font-bold items-center justify-center hover:bg-gray hover:text-white">
-                Catering
-              </a>
-            </Link>
-            <Link href="/">
+            <Link href="/email">
               <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 text-white font-bold items-center justify-center hover:bg-gray hover:text-white">
                 Contact
               </a>

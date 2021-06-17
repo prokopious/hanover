@@ -1,15 +1,15 @@
 import Head from "next/head"
 import SubmitButton from "../components/prebuilt/SubmitButton"
 import styles from "../styles/Cart.module.css"
-import { GrUpdate } from 'react-icons/gr'
+import { GrUpdate } from "react-icons/gr"
 import { gql } from "@apollo/client"
 import client from "../apollo-client"
 import Router from "next/router"
 import useCart from "../hooks/use-cart.js"
 import Layout from "../components/Layout"
-import Link from 'next/link'
+import Link from "next/link"
 import Table from "../components/Table"
-
+import products from "../products.json"
 
 const columns = [
   {
@@ -30,25 +30,23 @@ const columns = [
   },
 ]
 
-
-
-export default function Home({countries}) {
-console.log(countries.listProducts.items)
-const products = countries.listProducts.items
+export default function Home({ countries }) {
+  console.log(countries.listProducts.items)
+  const products = countries.listProducts.items
   const { cartItems, updateItem } = useCart()
-  const { subtotal, quantity, addToCart } = useCart()
+  const { subtotal, quantity, addToCart, clearCart } = useCart()
   const columnss = [
     {
       columnId: "title",
-      Header: 'Total',
+      Header: "Total",
     },
     {
       columnId: "quantity",
-      Header: '',
+      Header: "",
     },
     {
       columnId: "pricePerUnit",
-      Header: '',
+      Header: "",
     },
     {
       columnId: "total",
@@ -57,16 +55,15 @@ const products = countries.listProducts.items
   ]
   const data = cartItems.map(({ id, quantity, pricePerUnit }) => {
     const product = products.find(({ id: pid }) => pid === id)
-    const { title } = product || {}
-   
+    let { title } = product || {}
 
+    if (title === undefined) {
+      clearCart()
+    }
 
     const Quantity = () => {
-
-
       function handleOnSubmit(e) {
         e.preventDefault()
-
 
         const { currentTarget } = e
         const inputs = Array.from(currentTarget.elements)
@@ -78,12 +75,8 @@ const products = countries.listProducts.items
         })
       }
 
-
-
       return (
         <form className="bg-blend-color-burn" onSubmit={handleOnSubmit}>
-         
-
           <input
             className="w-10"
             id="input"
@@ -92,11 +85,14 @@ const products = countries.listProducts.items
             min={0}
             defaultValue={quantity}
           />
-       
-          <button className={styles.button}><GrUpdate/></button>
+
+          <button className={styles.button}>
+            <GrUpdate />
+          </button>
         </form>
       )
     }
+    console.log(data)
 
     return {
       id,
@@ -108,8 +104,7 @@ const products = countries.listProducts.items
   })
 
   return (
-    
-      <Layout>
+    <Layout>
       <div className={styles.container}>
         <Head>
           <title>Cart</title>
@@ -119,13 +114,19 @@ const products = countries.listProducts.items
         <main className="pt-0">
           <p className="pb-4">Order summary:</p>
 
+          <Table
+            className={styles.table}
+            data={data}
+            columns={columns}
+            columnss={columnss}
+          />
 
-          <Table className={styles.table} data={data} columns={columns} columnss={columnss} />
-
-          <SubmitButton><Link href="/checkout">Checkout</Link></SubmitButton>
+          <SubmitButton>
+            <Link href="/checkout">Checkout</Link>
+          </SubmitButton>
         </main>
-      </div></Layout>
-  
+      </div>
+    </Layout>
   )
 }
 
