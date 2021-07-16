@@ -1,5 +1,4 @@
 import styles from "../styles/Grid.module.css"
-import products from "../products.json"
 import useCart from "../hooks/use-cart"
 import { FiPlusSquare } from "react-icons/fi"
 import { FiMinusSquare } from "react-icons/fi"
@@ -36,7 +35,7 @@ export default function Grid() {
 
   const stuff = data.listProducts.items
  const products = stuff
-  console.log(stuff)
+
 
  
 
@@ -45,6 +44,7 @@ export default function Grid() {
       <div className={styles.grid}>
         {products.map(product => {
           const { id, title, description, price } = product
+          const pricePerUnit = price
 
           return (
             <div className="box">
@@ -52,7 +52,7 @@ export default function Grid() {
               <div className="menu" key={id}>
                 <div id="price">${price}</div>
                 <div>
-                  <button className="butt" onClick={() => addToCart({ id })}>
+                  <button className="butt" onClick={() => addToCart({ id, pricePerUnit })}>
                     <FiPlusSquare />
                   </button>
                 </div>
@@ -72,6 +72,13 @@ export default function Grid() {
           )
         })}
       </div>
+      <style jsx>{`
+      @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+        div, p {
+          font-family: 'Josefin Sans', sans-serif;
+        }
+        
+        `}</style>
     </>
   )
 }

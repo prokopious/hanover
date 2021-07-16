@@ -2,108 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
-.box{
-	padding: 30px;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+.box {
+  padding: 30px;
 }
 
 #title {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 #description {
-	font-style: italic;
-	line-height: 85%;
+  font-style: italic;
+  line-height: 85%;
 }
 
-#price{
-	padding-right: 20px;
+#price {
+  padding-right: 20px;
 }
-  .menu{
-	
+.menu {
+  display: flex;
+}
 
-	  display: flex;
-  }
-  #navbar {
-	position: sticky;
-	top: 0;
-
-	z-index: 100; /* this is optional and should be different for every project */
-  background-color: black;
-  padding: 10px;
-  }
-
-  #review {
-	 text-decoration: underline;
-  }
-
-  .butt {
-
-	  color: rgb(0, 0, 0);
-	padding-top: 5px;
-	padding-left: 5px;
-	  text-transform: lowercase;
-	  font-size: 20px;
-  }
-
-  #navbar a {
-	color: rgb(190, 190, 190);
-	padding: 5px;
-	min-width: 50px;
-
-  }
-  
-  .sticky-wrapper {
-	position: relative;
-	height: 3rem; /* We need to change this value */
-  }
-  
-  .sticky .sticky-inner {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 1;
-  }
-
-
-  
- #order {
-	 font-size: 30px;
-	 font-family: 'IM Fell English', serif;
- }
-  
- #navbar {
-	 font-size: 16px;
-
-	 font-family: 'Old Standard TT';
- }
+.butt {
+  color: rgb(0, 0, 0);
+  padding-top: 5px;
+  padding-left: 5px;
+  text-transform: lowercase;
+  font-size: 20px;
+}
 
 .her {
-	font-size: 30px;
-	font-family: 'Old Standard TT';
+  font-size: 30px;
 }
 
-body {
-	font-family: 'Old Standard TT';
-}
 .buttonBox {
-
-height: 700px;
-	position: relative;
-	background-color: rgba(99, 103, 156, 0.37);
+  height: 700px;
+  position: relative;
+  background-color: rgba(99, 103, 156, 0.37);
 }
 .testButton {
-	
-	padding: 10px 50px;
-	background-color: rgba(94, 94, 200, 0.596);
-	border-radius: 4px;
-	box-shadow: 5px 5px rgb(28, 23, 92);
-	margin: 0;
-	position: absolute;
-	top: 30%;
-	left: 50%;
-	-ms-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
+  padding: 10px 50px;
+  background-color: rgba(94, 94, 200, 0.596);
+  border-radius: 4px;
+  box-shadow: 5px 5px rgb(28, 23, 92);
+  margin: 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
-

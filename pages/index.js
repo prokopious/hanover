@@ -6,16 +6,11 @@ import Grid from "../components/Grid"
 import Order from "../components/Order"
 import { loadProducts } from "../public/js/load"
 
+const wait = time => new Promise((resolve, reject) => setTimeout(resolve(console.log('shit')), time))
+wait(300);
 export default function Home() {
-
-console.log(loadProducts)
-
-
-
-
-  return ( 
+  return (
     <Layout>
-    
       <div>
         <Head>
           <title>Create Next App</title>
@@ -32,8 +27,8 @@ console.log(loadProducts)
             minHeight="75vh"
             imageSrc="https://images.pexels.com/photos/3756050/pexels-photo-3756050.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
           >
-            <h1 className="her">Bread Delivered Fresh</h1>
-            <h4 className="text white 2xl">right to your door</h4>
+            <h1 className="her">FRESH BAKED GOODS</h1>
+            <h4 className="text white 2xl">RIGHT TO YOUR DOOR</h4>
           </LazyHero>
 
           <Order />

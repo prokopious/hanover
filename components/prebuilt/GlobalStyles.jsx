@@ -29,7 +29,7 @@ const GlobalStyles = () => (
         html {
 
           font-size: 18px;
-          font-family: Baskerville Old Face;
+      
          
         }
         body {

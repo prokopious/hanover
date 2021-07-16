@@ -60,6 +60,7 @@ export default function Home({ countries }) {
     if (title === undefined) {
       clearCart()
     }
+    
 
     const Quantity = () => {
       function handleOnSubmit(e) {
@@ -89,10 +90,11 @@ export default function Home({ countries }) {
           <button className={styles.button}>
             <GrUpdate />
           </button>
+
         </form>
       )
     }
-    console.log(data)
+
 
     return {
       id,
@@ -125,7 +127,9 @@ export default function Home({ countries }) {
             <Link href="/checkout">Checkout</Link>
           </SubmitButton>
         </main>
+
       </div>
+ 
     </Layout>
   )
 }

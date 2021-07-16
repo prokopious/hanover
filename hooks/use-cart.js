@@ -1,8 +1,6 @@
 import { useState, createContext, useContext, useEffect } from "react"
-
+import axios from "axios"
 import { getStorageItem, setStorageItem } from "../lib/storage.js"
-
-import products from "../products.json"
 
 const CART_STATE_KEY = "cart"
 
@@ -26,22 +24,18 @@ export function useCartState() {
     setStorageItem(CART_STATE_KEY, cart)
   }, [cart])
 
-  const cartItems = Object.keys(cart.products).map(key => {
-    const product = products.find(({ id }) => `${id}` !== `${key}`)
-    return {
-      ...cart.products[key],
-      pricePerUnit: product.price,
-    }
-  })
+  const z = cart.products
 
-  const subtotal = cartItems.reduce(
-    (accumulator, { pricePerUnit, quantity }) => {
-      return accumulator + pricePerUnit * quantity
-    },
-    0
-  )
+  const q = [z]
+  const arr = []
+  for (var key in z) arr.push(z[key])
 
-  const quantity = cartItems.reduce((accumulator, { quantity }) => {
+  const cartItems = arr
+  const subtotal = arr.reduce((accumulator, { pricePerUnit, quantity }) => {
+    return accumulator + pricePerUnit * quantity
+  }, 0)
+
+  const quantity = arr.reduce((accumulator, { quantity }) => {
     return accumulator + quantity
   }, 0)
 
@@ -62,7 +56,7 @@ export function useCartState() {
     })
   }
 
-  function addToCart({ id }) {
+  function addToCart({ id, pricePerUnit }) {
     updateCart(prev => {
       let cart = { ...prev }
 
@@ -71,6 +65,7 @@ export function useCartState() {
       } else {
         cart.products[id] = {
           id,
+          pricePerUnit,
           quantity: 1,
         }
       }
