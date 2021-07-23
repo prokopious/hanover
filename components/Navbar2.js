@@ -78,7 +78,7 @@ export default function Navbar() {
         </div>
         <style jsx>{`
           * {
-          color: silver;
+          color: #f0efee;
           }
           `}</style>
       </nav>

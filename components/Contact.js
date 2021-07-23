@@ -26,7 +26,7 @@ const CreateEmail = () => {
   })
   const [createEmail] = useMutation(EMAIL, {
     variables: {
-      id: formState.subject,
+      id: formState.id,
       author: formState.author,
       content: formState.content,
       subject: formState.subject,
