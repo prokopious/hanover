@@ -6,8 +6,11 @@ import Grid from "../components/Grid"
 import Order from "../components/Order"
 import { loadProducts } from "../public/js/load"
 
-const wait = time => new Promise((resolve, reject) => setTimeout(resolve(console.log('shit')), time))
-wait(300);
+const wait = time =>
+  new Promise((resolve, reject) =>
+    setTimeout(resolve(console.log("shit")), time)
+  )
+wait(300)
 export default function Home() {
   return (
     <Layout>
@@ -40,33 +43,28 @@ export default function Home() {
         </main>
       </div>
       <style jsx>{`
-        
         .her {
           font-size: 30px;
           font-weight: 900;
-
         }
-        
+
         .his {
           font-size: 20px;
           text-transform: lowercase;
         }
 
         @media only screen and (max-width: 600px) {
-
           .her {
-          font-size: 16px;
-          font-weight: 900;
+            font-size: 18px;
+            font-weight: 900;
+          }
 
+          .his {
+            font-size: 16px;
+            text-transform: lowercase;
+          }
         }
-        
-        .his {
-          font-size: 14px;
-          text-transform: lowercase;
-        }
-        }
-        
-        `}</style>
+      `}</style>
     </Layout>
   )
 }

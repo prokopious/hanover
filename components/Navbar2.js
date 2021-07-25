@@ -17,6 +17,7 @@ export default function Navbar() {
               viewBox="0 0 47.342 47.342"
               xmlns="http://www.w3.org/2000/svg"
               className="fill-current text-white h-8 w-8 mr-2"
+              id="sv"
             >
               <path
                 d="M39.645,15.841c-0.014-0.008-0.025-0.017-0.038-0.025c-0.29-0.191-0.664-0.202-0.964-0.026
@@ -77,9 +78,10 @@ export default function Navbar() {
           </div>
         </div>
         <style jsx>{`
-          * {
-          color: #f0efee;
-          }
+       
+        * {
+          color: #F8F0E3;
+        }
           `}</style>
       </nav>
     </>

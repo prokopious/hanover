@@ -11,13 +11,14 @@ export default function Navbar() {
   const { subtotal, checkout } = useCart()
   return (
     <>
-      <nav className="relative bg-black z-20 w-100vw ml-70 flex items-center flex-right p-3 ">
+      <nav id="sv" className="relative bg-black z-20 w-100vw ml-70 flex items-center flex-right p-3 ">
         <Link href="/">
           <a className="inline-flex items-center p-2 mr-4 ">
             <svg
               viewBox="0 0 47.342 47.342" 
               xmlns="http://www.w3.org/2000/svg"
-              className="fill-current text-white h-8 w-8 mr-2"
+              className="sv"
+            
             >
 		<path d="M39.645,15.841c-0.014-0.008-0.025-0.017-0.038-0.025c-0.29-0.191-0.664-0.202-0.964-0.026
 			c-0.301,0.176-0.475,0.507-0.447,0.854c0.21,2.857-0.008,5.423-0.225,7.063c-0.021,0.151-0.147,0.265-0.301,0.271
@@ -79,6 +80,15 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
+      <style jsx>{`
+        
+
+      .sv {
+        color: red;
+      }
+        
+        
+        `}</style>
     </>
   )
 }
