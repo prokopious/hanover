@@ -28,7 +28,7 @@ export default function Home() {
             imageSrc="https://images.pexels.com/photos/3756050/pexels-photo-3756050.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
           >
             <h1 className="her">FRESH BAKED GOODS</h1>
-            <h4 className="text white 2xl">RIGHT TO YOUR DOOR</h4>
+            <h4 className="his">RIGHT TO YOUR DOOR</h4>
           </LazyHero>
 
           <Order />
@@ -39,6 +39,34 @@ export default function Home() {
           </div>
         </main>
       </div>
+      <style jsx>{`
+        
+        .her {
+          font-size: 30px;
+          font-weight: 900;
+
+        }
+        
+        .his {
+          font-size: 20px;
+          text-transform: lowercase;
+        }
+
+        @media only screen and (max-width: 600px) {
+
+          .her {
+          font-size: 16px;
+          font-weight: 900;
+
+        }
+        
+        .his {
+          font-size: 14px;
+          text-transform: lowercase;
+        }
+        }
+        
+        `}</style>
     </Layout>
   )
 }

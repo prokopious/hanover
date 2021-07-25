@@ -120,12 +120,13 @@ const CreateEmail = () => {
 
           .box {
             background-color: #beb9cd;
+            padding-bottom: 400px;
           }
 
           #ebox {
             display: grid;
             grid-template-columns: 1fr;
-            margin: 8%;
+            margin: 18%;
             margin-top: 2%;
             color: black;
           }
