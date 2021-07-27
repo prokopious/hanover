@@ -35,6 +35,7 @@ const CreateEmail = () => {
 
   return (
     <div className="box">
+      <div></div>
       <div className="color">
         <form
           onSubmit={e => {
@@ -106,27 +107,27 @@ const CreateEmail = () => {
           </div>
         </form>
       </div>
+      <div></div>
       <style jsx>
         {`
           .color {
             height: 100vw;
-            padding-left: 15%;
-            padding-right: 15%;
-            padding-top: 30px;
- 
-          }
 
-          
+            padding-top: 30px;
+          }
 
           .box {
             background-color: #beb9cd;
-            padding-bottom: 400px;
+
+            text-align: center;
+            display: grid;
+            grid-template-columns: 30% 40% 30%;
           }
 
           #ebox {
             display: grid;
             grid-template-columns: 1fr;
-            margin: 18%;
+          
             margin-top: 2%;
             color: black;
           }
@@ -155,13 +156,36 @@ const CreateEmail = () => {
             width: 100%;
             height: 200px;
           }
+          @media screen and (max-width: 1800px) {
+            .box {
+              grid-template-columns: 35% 30% 35%;
+            }
+          }
+          @media screen and (max-width: 1400px) {
+            .box {
+              grid-template-columns: 30% 40% 30%;
+            }
+          }
 
+
+          @media screen and (max-width: 1100px) {
+            .box {
+              grid-template-columns: 20% 60% 20%;
+            }
+          }
           @media screen and (max-width: 600px) {
             #ebox {
               display: grid;
               grid-template-columns: 1fr;
-              margin: 0%;
+
               color: black;
+            }
+
+            .box {
+              grid-template-columns: 1fr;
+            }
+
+            .color {
             }
           }
         `}
