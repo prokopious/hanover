@@ -83,7 +83,7 @@ export default function Navbar() {
       <style jsx>{`
         
 
-      .sv {
+      #sv {
         color: red;
       }
         

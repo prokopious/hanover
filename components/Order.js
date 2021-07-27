@@ -51,7 +51,7 @@ export default function Order() {
             z-index: 100; /* this is optional and should be different for every project */
             background-color: black;
             padding: 15px;
-            border-bottom: 3px solid rgb(128, 128, 128);
+         
           }
         `}</style>
       </div>
