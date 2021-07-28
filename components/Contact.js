@@ -118,7 +118,7 @@ const CreateEmail = () => {
 
           .box {
             background-color: #beb9cd;
-
+            min-height: 100vh;
             text-align: center;
             display: grid;
             grid-template-columns: 30% 40% 30%;
@@ -127,7 +127,7 @@ const CreateEmail = () => {
           #ebox {
             display: grid;
             grid-template-columns: 1fr;
-          
+
             margin-top: 2%;
             color: black;
           }
@@ -166,7 +166,6 @@ const CreateEmail = () => {
               grid-template-columns: 30% 40% 30%;
             }
           }
-
 
           @media screen and (max-width: 1100px) {
             .box {

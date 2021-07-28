@@ -73,16 +73,18 @@ export default function Navbar() {
                 Contact
               </a>
             </Link>
-       
-    
+            <Link href="/email">
+              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 text-white font-bold items-center justify-center hover:bg-gray hover:text-white">
+                Catering
+              </a>
+            </Link>
           </div>
         </div>
         <style jsx>{`
-       
-        * {
-          color: #F8F0E3;
-        }
-          `}</style>
+          * {
+            color: #f8f0e3;
+          }
+        `}</style>
       </nav>
     </>
   )
