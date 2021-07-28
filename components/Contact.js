@@ -111,9 +111,7 @@ const CreateEmail = () => {
       <style jsx>
         {`
           .color {
-            height: 100vw;
-
-            padding-top: 30px;
+            padding-top: 10px;
           }
 
           .box {
