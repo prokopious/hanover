@@ -37,6 +37,7 @@ const CreateEmail = () => {
     <div className="box">
       <div></div>
       <div className="color">
+      <div id="kontact">Contact Us</div>
         <form
           onSubmit={e => {
             e.preventDefault()
@@ -125,8 +126,6 @@ const CreateEmail = () => {
           #ebox {
             display: grid;
             grid-template-columns: 1fr;
-
-            margin-top: 2%;
             color: black;
           }
           .cont {
@@ -139,7 +138,11 @@ const CreateEmail = () => {
             margin-bottom: 10px;
             border-radius: 4px;
           }
-
+#kontact {
+  font-size: 20px;
+  font-weight: 700;
+  padding-bottom: 30px;
+}
           .bu {
             background-color: whitesmoke;
             padding: 5px 14px;
@@ -171,6 +174,11 @@ const CreateEmail = () => {
             }
           }
           @media screen and (max-width: 600px) {
+            #kontact {
+  font-size: 16px;
+  font-weight: 700;
+  padding-bottom: 30px;
+}
             #ebox {
               display: grid;
               grid-template-columns: 1fr;

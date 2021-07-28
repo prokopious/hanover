@@ -12,7 +12,7 @@ export default function ClientSide() {
       </Head>
 
       <main>
-    
+  
         <ClientOnly>
           <Contact />
         </ClientOnly>
