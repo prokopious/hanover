@@ -56,4 +56,24 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-
+#email {
+  background-color: rgb(242, 242, 243);
+width: 300px;
+margin-bottom: 20px;
+padding: 10px;
+border-radius: 4px;
+}
+#name {
+  background-color: rgb(242, 242, 243);
+  width: 300px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 4px;
+}
+#message {
+  width: 300px;
+  height: 200px;
+  background-color: rgb(242, 242, 243);
+  padding: 10px;
+  border-radius: 4px;
+}
