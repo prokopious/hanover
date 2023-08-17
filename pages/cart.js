@@ -8,6 +8,7 @@ import Router from "next/router"
 import useCart from "../hooks/use-cart.js"
 import Layout from "../components/Layout"
 import Link from "next/link"
+import useFetch from '../hooks/useFetch'
 import Table from "../components/Table"
 import products from "../products.json"
 
@@ -30,9 +31,9 @@ const columns = [
   },
 ]
 
-export default function Home({ countries }) {
-  console.log(countries.listProducts.items)
-  const products = countries.listProducts.items
+export default function Home({ products }) {
+  console.log(products)
+
   const { cartItems, updateItem } = useCart()
   const { subtotal, quantity, addToCart, clearCart } = useCart()
   const columnss = [
@@ -135,25 +136,27 @@ export default function Home({ countries }) {
 }
 
 export async function getStaticProps() {
-  const { data } = await client.query({
-    query: gql`
-      query MyQuery {
-        listProducts {
-          items {
-            description
-            id
-            image
-            price
-            title
-          }
-        }
-      }
-    `,
-  })
+  // const { data } = await client.query({
+  //   query: gql`
+  //     query MyQuery {
+  //       listProducts {
+  //         items {
+  //           description
+  //           id
+  //           image
+  //           price
+  //           title
+  //         }
+  //       }
+  //     }
+  //   `,
+  // })
+  const res = await fetch('https://primavera-spring-058cb888894c.herokuapp.com/api/products')
+  const data = await res.json()
 
   return {
     props: {
-      countries: data,
+      products: data,
     },
   }
 }

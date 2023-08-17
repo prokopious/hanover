@@ -2,7 +2,7 @@ import React from "react"
 import useCart from "../hooks/use-cart.js"
 
 export default function Order() {
-  const { cartItems, updateItem } = useCart()
+  // const { cartItems, updateItem } = useCart()
   const { subtotal, quantity, addToCart } = useCart()
 
   return (

@@ -6,7 +6,7 @@ export default function useFetch() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://www.localhost:3000/api/users")
+      const response = await fetch("http://www.localhost:3000/api/products")
       const newData = await response.json()
     }
   }, [])

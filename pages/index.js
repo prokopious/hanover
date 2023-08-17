@@ -1,16 +1,9 @@
 import Head from "next/head"
 import Layout from "../components/Layout"
 import LazyHero from "react-lazy-hero"
-import App from "../App"
-import Grid from "../components/Grid"
+import Grid2 from "../components/Grid2"
 import Order from "../components/Order"
-import { loadProducts } from "../public/js/load"
 
-const wait = time =>
-  new Promise((resolve, reject) =>
-    setTimeout(resolve(console.log("shit")), time)
-  )
-wait(300)
 export default function Home() {
   return (
     <Layout>
@@ -38,7 +31,7 @@ export default function Home() {
 
           <div>
             {" "}
-            <Grid />
+            <Grid2 />
           </div>
         </main>
       </div>
