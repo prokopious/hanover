@@ -1,37 +1,24 @@
 import React, { useState } from "react"
-import { useMutation, gql } from "@apollo/client"
+
 import Router from "next/router"
 
-const EMAIL = gql`
-  mutation PostMutation(
-    $content: String!
-    $subject: String!
-    $author: String!
-    $id: String!
-  ) {
-    createPost(
-      input: { content: $content, author: $author, subject: $subject, id: $id }
-    ) {
-      id
-    }
-  }
-`
+
 
 const CreateEmail = () => {
-  const [formState, setFormState] = useState({
-    id: "",
-    content: "",
-    author: "",
-    subject: "",
-  })
-  const [createEmail] = useMutation(EMAIL, {
-    variables: {
-      id: formState.id,
-      author: formState.author,
-      content: formState.content,
-      subject: formState.subject,
-    },
-  })
+  // const [formState, setFormState] = useState({
+  //   id: "",
+  //   content: "",
+  //   author: "",
+  //   subject: "",
+  // })
+  // const [createEmail] = useMutation(EMAIL, {
+  //   variables: {
+  //     id: formState.id,
+  //     author: formState.author,
+  //     content: formState.content,
+  //     subject: formState.subject,
+  //   },
+  // })
 
   return (
     <div className="box">
@@ -39,22 +26,22 @@ const CreateEmail = () => {
       <div className="color">
         <div id="kontact">Contact Us</div>
         <form
-          onSubmit={e => {
-            e.preventDefault()
-            createEmail().then(Router.push("/success"))
-          }}
+          // onSubmit={e => {
+          //   e.preventDefault()
+          //   createEmail().then(Router.push("/success"))
+          // }}
         >
           <div id="ebox">
             <div className="in">
               <input
                 className="name"
-                value={formState.id}
-                onChange={e =>
-                  setFormState({
-                    ...formState,
-                    id: e.target.value,
-                  })
-                }
+                // value={formState.id}
+                // onChange={e =>
+                //   setFormState({
+                //     ...formState,
+                //     id: e.target.value,
+                //   })
+                // }
                 type="text"
                 placeholder="Name"
               />
@@ -62,13 +49,13 @@ const CreateEmail = () => {
             <div className="in">
               <input
                 className="email"
-                value={formState.author}
-                onChange={e =>
-                  setFormState({
-                    ...formState,
-                    author: e.target.value,
-                  })
-                }
+                // value={formState.author}
+                // onChange={e =>
+                //   setFormState({
+                //     ...formState,
+                //     author: e.target.value,
+                //   })
+                // }
                 type="text"
                 placeholder="Email"
               />
@@ -76,13 +63,13 @@ const CreateEmail = () => {
             <div className="in">
               <input
                 className="subject"
-                value={formState.subject}
-                onChange={e =>
-                  setFormState({
-                    ...formState,
-                    subject: e.target.value,
-                  })
-                }
+                // value={formState.subject}
+                // onChange={e =>
+                //   setFormState({
+                //     ...formState,
+                //     subject: e.target.value,
+                //   })
+                // }
                 type="text"
                 placeholder="Subject"
               />
@@ -90,13 +77,13 @@ const CreateEmail = () => {
             <div className="in">
               <textarea
                 className="content"
-                value={formState.content}
-                onChange={e =>
-                  setFormState({
-                    ...formState,
-                    content: e.target.value,
-                  })
-                }
+                // value={formState.content}
+                // onChange={e =>
+                //   setFormState({
+                //     ...formState,
+                //     content: e.target.value,
+                //   })
+                // }
                 type="textarea"
                 placeholder="Message"
               />

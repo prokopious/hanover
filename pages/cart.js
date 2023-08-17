@@ -2,15 +2,11 @@ import Head from "next/head"
 import SubmitButton from "../components/prebuilt/SubmitButton"
 import styles from "../styles/Cart.module.css"
 import { GrUpdate } from "react-icons/gr"
-import { gql } from "@apollo/client"
-import client from "../apollo-client"
-import Router from "next/router"
 import useCart from "../hooks/use-cart.js"
 import Layout from "../components/Layout"
 import Link from "next/link"
-import useFetch from '../hooks/useFetch'
 import Table from "../components/Table"
-import products from "../products.json"
+
 
 const columns = [
   {
@@ -136,21 +132,7 @@ export default function Home({ products }) {
 }
 
 export async function getStaticProps() {
-  // const { data } = await client.query({
-  //   query: gql`
-  //     query MyQuery {
-  //       listProducts {
-  //         items {
-  //           description
-  //           id
-  //           image
-  //           price
-  //           title
-  //         }
-  //       }
-  //     }
-  //   `,
-  // })
+
   const res = await fetch('https://primavera-spring-058cb888894c.herokuapp.com/api/products')
   const data = await res.json()
 
