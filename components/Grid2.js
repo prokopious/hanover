@@ -1,6 +1,5 @@
 import styles from "../styles/Grid.module.css"
 import useCart from "../hooks/use-cart"
-import { useEffect } from 'react'
 import useFetch from "../hooks/useFetch"
 import { FiPlusSquare } from "react-icons/fi"
 import { FiMinusSquare } from "react-icons/fi"
@@ -8,36 +7,6 @@ import { FiMinusSquare } from "react-icons/fi"
 export default function Grid2() {
     const { addToCart, removeFromCart } = useCart()
     const { data, status } = useFetch('https://primavera-spring-058cb888894c.herokuapp.com/api/products')
-
-
-    // const products = [
-    //     {
-
-    //         "description": "A delicious vanilla.",
-    //         "id": "Ice Cream",
-    //         "image": "df",
-    //         "price": 23,
-    //         "title": "Vanilla ice cream."
-    //     },
-    //     {
-
-    //         "description": "Deer Tracks.",
-    //         "id": "Deer Tracks",
-    //         "image": "df",
-    //         "price": 23,
-    //         "title": "A new blend of cream and milk."
-    //     },
-    //     {
-
-    //         "description": "Cake batter ice cream to die for.",
-    //         "id": "Cake Batter",
-    //         "image": "df",
-    //         "price": 21,
-    //         "title": "Cake Batter"
-    //     }
-    // ]
-
-    // let string = JSON.stringify(data)
 
     return (
         <div>

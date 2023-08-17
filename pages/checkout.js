@@ -1,5 +1,4 @@
 import Head from "next/head"
-
 import styles from "../styles/Cart.module.css"
 import CheckoutForm from "../components/CheckoutForm"
 import Router from "next/router"
@@ -32,7 +31,6 @@ export default function Home() {
           <title>Checkout</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-
         <CheckoutForm
           price={subtotal}
           onSuccessfulCheckout={() => Router.push("/success").then(clearCart())}

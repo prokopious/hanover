@@ -1,5 +1,4 @@
 import React from "react"
-import Logo from "./components/Logo"
 import Mains from "./components/Mains"
 import Extras from "./components/Extras"
 import Total from "./components/Total"
