@@ -5,7 +5,7 @@ import { getStorageItem, setStorageItem } from "../lib/storage.js"
 const CART_STATE_KEY = "cart"
 
 const defaultCart = {
-  products: {quantity: 0},
+  products: {},
 }
 
 export const CartContext = createContext()
