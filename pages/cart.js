@@ -6,6 +6,7 @@ import useCart from "../hooks/use-cart.js"
 import Layout from "../components/Layout"
 import Link from "next/link"
 import Table from "../components/Table"
+import prisma from '../lib/prisma';
 
 
 const columns = [
