@@ -66,7 +66,6 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
           currency: "usd",
         }
       )
-      console.log(clientSecret)
 
       const paymentMethodReq = await stripe.createPaymentMethod({
         type: "card",

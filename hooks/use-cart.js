@@ -25,6 +25,8 @@ export function useCartState() {
   }, [cart])
 
   const z = cart.products
+  console.log("cart")
+  console.log(z)
 
   const q = [z]
   const arr = []
@@ -46,12 +48,12 @@ export function useCartState() {
     updateCart(prev => {
       let cart = { ...prev }
 
-      if (cart.products[id] && cart.products[id].quantity > 0) {
+      if (cart.products[id].quantity > 0) {
         cart.products[id].quantity = cart.products[id].quantity - 1
       } else {
-        if (cart.products[id]) {
+
         cart.products[id].quantity = cart.products[id].quantity + 0
-        }
+
       }
 
       return cart

@@ -19,6 +19,7 @@ export default function Home({ products }) {
         </Head>
 
         <main>
+        {/* <div className="award"><img src="/award.png" alt="logo" width="200" height="200" /></div> */}
           <Hero />
 
           <Order />
@@ -33,6 +34,19 @@ export default function Home({ products }) {
         .her {
           font-size: 30px;
           font-weight: 900;
+        }
+
+        .award {
+          position: fixed;
+          z-index: 10;
+          mix-blend-mode: multiply;
+          margin: 0;
+          padding: 0;
+          text-align: right;
+          position: fixed;
+          top:50;
+          right:0;
+     
         }
 
         .his {

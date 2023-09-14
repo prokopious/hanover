@@ -1,16 +1,20 @@
 import Image from 'next/image'
+import asset from '../public/award.png'
 
 export default function Hero() {
 
 return (
 
 
-<div className="hero">
+<div><img className="award" src="/award.png" alt="logo" width="200" height="200" /><div className="hero">
+    
     <div className="hero-text">
         <h1><b>FRESH BAKED GOODS</b></h1>
         <p>right to your door</p>
-    </div>
+    </div></div>
     <style jsx>{`
+
+    
         .hero {
             background-image: url("https://images.pexels.com/photos/3756050/pexels-photo-3756050.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
             background-size: cover;
@@ -23,6 +27,10 @@ return (
             animation: fadeInAnimation ease 1s;
             animation-iteration-count: 1;
             animation-fill-mode: forwards;
+            position: relative;
+        }
+        .award{
+            position: fixed;
         }
 
         .hero-text {
