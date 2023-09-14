@@ -48,12 +48,12 @@ export function useCartState() {
     updateCart(prev => {
       let cart = { ...prev }
 
-      if (cart.products[id].quantity > 0) {
+      if (cart.products[id] && cart.products[id].quantity > 0) {
         cart.products[id].quantity = cart.products[id].quantity - 1
       } else {
-
-        cart.products[id].quantity = cart.products[id].quantity + 0
-
+        if (cart.products[id]) {
+          cart.products[id].quantity = cart.products[id].quantity + 0
+        }
       }
 
       return cart

@@ -3,16 +3,15 @@ import asset from '../public/award.png'
 
 export default function Hero() {
 
-return (
+    return (
 
 
-<div><img className="award" src="/award.png" alt="logo" width="200" height="200" /><div className="hero">
-    
-    <div className="hero-text">
-        <h1><b>FRESH BAKED GOODS</b></h1>
-        <p>right to your door</p>
-    </div></div>
-    <style jsx>{`
+        <div className="hero">
+            <div className="hero-text">
+                <h1><b>FRESH BAKED GOODS</b></h1>
+                <p>right to your door</p>
+            </div>
+            <style jsx>{`
 
     
         .hero {
@@ -57,9 +56,9 @@ return (
              }
         }
     `}</style>
-</div>
+        </div>
 
-)
+    )
 
 
 }
