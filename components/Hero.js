@@ -27,7 +27,6 @@ return (
             animation: fadeInAnimation ease 1s;
             animation-iteration-count: 1;
             animation-fill-mode: forwards;
-            position: relative;
         }
         .award{
             position: fixed;
