@@ -11,6 +11,7 @@ import CheckoutError from "./prebuilt/CheckoutError"
 const CardElementContainer = styled.div`
   height: 40px;
   display: flex;
+  color: black;
   align-items: center;
   & .StripeElement {
     width: 100%;

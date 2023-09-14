@@ -7,8 +7,8 @@ return (
 
 <div className="hero">
     <div className="hero-text">
-        <h1>Fresh Baked Goods</h1>
-        <p>Right to your door</p>
+        <h1><b>FRESH BAKED GOODS</b></h1>
+        <p>right to your door</p>
     </div>
     <style jsx>{`
         .hero {
@@ -33,12 +33,12 @@ return (
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: calc(20px + 1vw);
             margin: 0;
         }
 
         p {
-            font-size: 1.5rem;
+            font-size: calc(15px + 1vw);
             margin: 0;
         }
         @keyframes fadeInAnimation {

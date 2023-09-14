@@ -59,7 +59,6 @@ export default function Home({ products }) {
       clearCart()
     }
     
-
     const Quantity = () => {
       function handleOnSubmit(e) {
         e.preventDefault()
@@ -92,7 +91,6 @@ export default function Home({ products }) {
         </form>
       )
     }
-
 
     return {
       id,
