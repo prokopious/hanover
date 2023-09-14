@@ -4,8 +4,6 @@ import Extras from "./components/Extras"
 import Total from "./components/Total"
 import { Provider } from "./Context"
 
-
-
 export default function App() {
   return (
     <Provider>

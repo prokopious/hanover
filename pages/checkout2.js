@@ -9,14 +9,13 @@ import Layout from "../components/Layout"
 
 export default function Cat() {
 
- 
+
     return (
 
-<Provider>
+        <Provider>
             <Layout>
-    <Total />
-            </Layout></Provider>
- 
-  
+                <Total />
+            </Layout>
+        </Provider>
     )
 }

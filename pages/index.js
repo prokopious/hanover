@@ -1,10 +1,11 @@
 import Head from "next/head"
 import Layout from "../components/Layout"
-import LazyHero from "react-lazy-hero"
 import Grid2 from "../components/Grid2"
 import Order from "../components/Order"
+import Hero from "../components/Hero"
+import prisma from '../lib/prisma';
 
-export default function Home() {
+export default function Home({ products }) {
   return (
     <Layout>
       <div>
@@ -18,20 +19,13 @@ export default function Home() {
         </Head>
 
         <main>
-          <LazyHero
-            opacity={0.1}
-            minHeight="75vh"
-            imageSrc="https://images.pexels.com/photos/3756050/pexels-photo-3756050.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-          >
-            <h1 className="her">FRESH BAKED GOODS</h1>
-            <h4 className="his">RIGHT TO YOUR DOOR</h4>
-          </LazyHero>
+          <Hero />
 
           <Order />
 
           <div>
             {" "}
-            <Grid2 />
+            <Grid2 data={products} />
           </div>
         </main>
       </div>
@@ -61,3 +55,12 @@ export default function Home() {
     </Layout>
   )
 }
+
+export const getStaticProps = async () => {
+  const products = await prisma.product.findMany();
+  console.log(products)
+  return {
+    props: { products },
+    revalidate: 10,
+  };
+};

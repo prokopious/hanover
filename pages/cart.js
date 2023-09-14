@@ -28,7 +28,7 @@ const columns = [
 ]
 
 export default function Home({ products }) {
-  console.log(products)
+ 
 
   const { cartItems, updateItem } = useCart()
   const { subtotal, quantity, addToCart, clearCart } = useCart()
@@ -97,8 +97,8 @@ export default function Home({ products }) {
       id,
       title,
       quantity: <Quantity />,
-      pricePerUnit: pricePerUnit.toFixed(2),
-      total: (quantity * pricePerUnit).toFixed(2),
+      pricePerUnit: pricePerUnit,
+      total: (quantity * pricePerUnit),
     }
   })
 
@@ -131,14 +131,11 @@ export default function Home({ products }) {
   )
 }
 
-export async function getStaticProps() {
-
-  const res = await fetch('https://primavera-spring-058cb888894c.herokuapp.com/api/products')
-  const data = await res.json()
-
+export const getStaticProps = async () => {
+  const products = await prisma.product.findMany();
+  console.log(products)
   return {
-    props: {
-      products: data,
-    },
-  }
-}
+    props: { products },
+    revalidate: 10,
+  };
+};

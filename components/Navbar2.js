@@ -11,8 +11,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="flex items-center flex-wrap bg-black p-3 ">
-        <Link href="/">
-          <a className="inline-flex items-center p-2 mr-4 ">
+        <Link  className="inline-flex items-center p-2 mr-4 " href="/">
             <svg
               viewBox="0 0 47.342 47.342"
               xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +34,6 @@ export default function Navbar() {
             <span className="text-xl text-white font-bold uppercase tracking-wide">
               Hanover Bakery
             </span>
-          </a>
         </Link>
         <button
           className=" inline-flex p-3 hover:bg-gray lg:hidden text-white ml-auto hover:text-white outline-none"
@@ -68,10 +66,8 @@ export default function Navbar() {
                 Admin
               </a>
             </Link> */}
-            <Link href="/email">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 text-white font-bold items-center justify-center hover:bg-gray hover:text-white">
+            <Link  className="lg:inline-flex lg:w-auto w-full px-3 py-2 text-white font-bold items-center justify-center hover:bg-gray hover:text-white" href="/email">
                 Contact
-              </a>
             </Link>
           </div>
         </div>

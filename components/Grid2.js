@@ -4,14 +4,14 @@ import useFetch from "../hooks/useFetch"
 import { FiPlusSquare } from "react-icons/fi"
 import { FiMinusSquare } from "react-icons/fi"
 
-export default function Grid2() {
+export default function Grid2({ data }) {
+
     const { addToCart, removeFromCart } = useCart()
-    const { data, status } = useFetch('https://primavera-spring-058cb888894c.herokuapp.com/api/products')
+    // const { data, status } = useFetch('https://primavera-spring-058cb888894c.herokuapp.com/api/products')
 
     return (
         <div>
-            {status == 'fetching' && <div>loading...</div>}
-            {status == 'fetched' && <div className={styles.grid}>
+            {data && <div className={styles.grid}>
                 {
                     data.map(product => {
                         console.log(data)
