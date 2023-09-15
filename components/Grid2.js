@@ -49,6 +49,25 @@ export default function Grid2({ data }) {
         div, p {
           font-family: 'Josefin Sans', sans-serif;
         }
+
+        .box {
+  
+       
+
+          @media(min-width: 1200px) {
+          width: 70%;
+       
+          }
+
+        //   @media(max-width: 1000) {
+        //     width: 90%;
+        //   }
+
+          @media(max-width: 1199px) {
+            width: 100%;
+          }
+
+        }   
         
         `}</style>
         </div>
